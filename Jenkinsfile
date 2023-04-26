@@ -1,3 +1,6 @@
+// define variables
+def ssh = "/usr/bin/ssh"
+
 pipeline {
     agent {label 'masternodes'}
     
@@ -22,7 +25,7 @@ pipeline {
         }    
         stage ("copy file to jenkins"){
             steps{
-              sh "ssh jenkins@192.168.1.27 mkdir -p /home/jenkins/aishwarya"
+                sh "${ssh} jenkins@192.168.1.27 /usr/bin/mkdir -p /home/jenkins/aishwarya"
                 echo "folder of your name is created on jenkins"
                  sh "/usr/bin/scp /jenkins-node/workspace/Aishwarya/copycommandoutput/command.output jenkins@192.168.1.27:/home/jenkins/aishwarya"
 
