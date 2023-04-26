@@ -21,7 +21,6 @@ pipeline {
         }    
         stage ("copy file to jenkins"){
             steps{
-                echo "the global email is ${var_email}"
               sh "ssh jenkins@192.168.1.27 mkdir -p aishwarya"
                  sh "/usr/bin/scp /jenkins-node/workspace/Aishwarya/copycommandoutput/command.output jenkins@192.168.1.27:/home/jenkins/aishwarya"
 
