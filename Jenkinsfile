@@ -23,7 +23,7 @@ pipeline {
             steps{
                 echo "the global email is ${var_email}"
               sh "ssh jenkins@192.168.1.27 mkdir -p aishwarya"
-                 sh "/usr/bin/scp /home/node1/jenkins-node/workspace/copycommandoutput/command.output jenkins@192.168.1.27:/home/jenkins/aishwarya"
+                 sh "/usr/bin/scp /jenkins-node/workspace/copycommandoutput/command.output jenkins@192.168.1.27:/home/jenkins/aishwarya"
 
             }
         }
